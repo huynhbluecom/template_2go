@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8"/>
+		<!-- Favicons -->
+		<link href="img/favicon.png" rel="icon"/>
+		<!-- Bootstrap CSS File -->
+		<link href="lib/bootstrap/css/bootstrap.min.css" rel="stylesheet"/>
+		<link rel="stylesheet" href="css/bootstrap-datetimepicker.min.css" />
+		<link rel="stylesheet" href="css/owl.carousel.min.css"/>
+		<!-- Libraries CSS Files -->
+		<link href="lib/font-awesome/css/font-awesome.min.css" rel="stylesheet"/>
+		<link href="lib/animate/animate.min.css" rel="stylesheet"/>
+		<!-- Main Stylesheet File -->
+		<link href="css/style.css" rel="stylesheet"/>
+		<!-- JavaScript Libraries -->
+		<script src="lib/jquery/jquery.min.js"></script>
+		<script src="lib/bootstrap/js/bootstrap.min.js"></script>
+		<script src="lib/superfish/superfish.min.js"></script>
+		<script type="text/javascript" src="js/bootstrap-datetimepicker.js"></script>
+		<script src="js/owl.carousel.min.js"></script>
+	</head>
+	<body>
+		<!--==========================
+		Header
+		============================-->
+		<header id="header">
+			<div class="container">
+			  <div id="logo" class="pull-left">
+			    <a href="#hero"><img src="img/logo.png" alt="" title="" /></a>
+			  </div>
+			  <nav id="nav-menu-container">
+			    <ul class="nav-menu">
+			      <li class="menu-active"><a href="#hero">Home</a></li>
+			      <li><a href="#about">About Us</a></li>
+			      <li><a href="#services">Services</a></li>
+			      <li><a href="#portfolio">Portfolio</a></li>
+			      <li><a href="#team">Team</a></li>
+			      <li class="menu-has-children"><a href="">Drop Down</a>
+			        <ul>
+			          <li><a href="#">Drop Down 1</a></li>
+			          <li class="menu-has-children"><a href="#">Drop Down 2</a>
+			            <ul>
+			              <li><a href="#">Deep Drop Down 1</a></li>
+			              <li><a href="#">Deep Drop Down 2</a></li>
+			              <li><a href="#">Deep Drop Down 3</a></li>
+			              <li><a href="#">Deep Drop Down 4</a></li>
+			              <li><a href="#">Deep Drop Down 5</a></li>
+			            </ul>
+			          </li>
+			          <li><a href="#">Drop Down 3</a></li>
+			          <li><a href="#">Drop Down 4</a></li>
+			          <li><a href="#">Drop Down 5</a></li>
+			        </ul>
+			      </li>
+			      <li><a href="#contact">Contact Us</a></li>
+			    </ul>
+			  </nav><!-- #nav-menu-container -->
+			</div>
+		</header><!-- #header -->
+		
+		<script src="js/checkinput.js"></script>
+				<!--==========================
+				Box TOP Section
+				============================-->
+				<section id="hero">
+					<div class="hero-container">
+					  <h3>Book Train Tickets</h3>
+					  <div class="container">
+					    <div class="panel with-nav-tabs panel-mybox">
+					      <div class="panel-heading">
+					        <ul class="nav nav-tabs">
+					            <li class="active"><a rel="tab1" data-toggle="tab">TAXI</a></li>
+					            <li><a rel="tab2" data-toggle="tab">FLIGHTS</a></li>
+					            <li><a rel="tab3" data-toggle="tab">HOTEL</a></li>
+					            <li><a rel="tab4" data-toggle="tab">FLIGHTS + HOTEL</a></li>
+					            <li><a rel="tab5" data-toggle="tab">TOURS</a></li>
+					            <li><a rel="tab6" data-toggle="tab">TRAINS</a></li> 
+					        </ul>
+					      </div>
+					      <div class="panel-body">
+					        <div class="tab-content">
+					          <div class="tab-pane fade in active" id="tab1"> <!--TAXI -->
+					          	<form id="taxiform" action="/taxi_order" method="POST">
+						            <div class="oneway-roundtrip">
+						              <ul class="clearfix">
+						              	<li style="width:25%">
+						              		<input style="border-radius: 0 0 0 3px;" name="name" onkeyup="checkinputname(this);" id="taxi_name" autocomplete="off" type="text" placeholder="Họ và tên" class="required_field ac_input" value="" spellcheck="false" onfocusout="checkrequired(this);"/>
+						              		<div class="toasterHolder">
+						              			Hãy nhập họ và tên
+						              		</div>
+						              	</li>
+						              	<li style="width:25%">
+						              		<input name="mobile" id="taxi_mobile" onkeyup="checkinputphone(this);" autocomplete="off" type="text" placeholder="Số điện thoại" class="required_field ac_input" value="" spellcheck="false" onfocusout="checkrequired(this);"/>
+						              		<div class="toasterHolder">
+						              			Hãy nhập số điện thoại
+						              		</div>
+						              	</li>
+						                <li style="width:25%">
+						                  	<input name="from" id="taxi_from" type="text" placeholder="Điểm đón"  class="ac_input" value=""  spellcheck="false" autocomplete="off" onfocusout="checkrequired(this);"/>
+						                  	<a id="taxi_xchange" onclick="changefromto(this);" href="javascript:void(0);" class="xChange" data-swap="true"> <i class="ico-be-leftRightArow" title="Swap Origin City and Destination City"></i> </a>
+						                  	<div class="toasterHolder">
+						              			Hãy nhập điểm đón
+						              		</div>
+						                </li> 
+						                <li style="width:25%"> 
+						                	<input name="to" id="taxi_to" autocomplete="off" type="text" placeholder="Điểm đến" class="required_field ac_input" value="Sân bay Nội Bài, Phú Cường, Hà Nội" spellcheck="false" readonly="readonly" onfocusout="checkrequired(this);"/>
+						                	<div class="toasterHolder">
+						              			Hãy nhập điểm đến
+						              		</div>
+						                </li>
+						              </ul> 
+						            </div>
+						            <div class="ripple-parent"> <input id="taxi_submit"  type="submit" value="Đặt xe" class="search-btn"/> </div>
+					            </form>
+					          </div>
+					          <div class="tab-pane fade" id="tab2">
+					            <div class="oneway-roundtrip"> 
+					              <ul class="clearfix"> 
+					                <li>
+					                  <input type="text" placeholder="From"  class="ac_input" value=""  spellcheck="false" autocomplete="off"/>
+					                  <a href="javascript:void(0);" class="xChange" data-swap="true"> <i class="ico-be-leftRightArow" title="Swap Origin City and Destination City"></i> </a>
+					                </li> 
+					                <li> <input autocomplete="off" type="text" placeholder="To" class="required_field ac_input" value="" spellcheck="false"/></li>
+					                <li>
+					                  <div class='input-group date' id='datetimepicker2'>
+					                      <input type='text' class="" />
+					                      <span class="input-group-addon">
+					                          <span class="glyphicon glyphicon-calendar"></span>
+					                      </span>
+					                  </div>
+
+					                </li>
+					              </ul> 
+					            </div>
+					            <div class="ripple-parent"> <input type="submit" value="Search" class="search-btn"/> </div>
+					          </div>
+					          <div class="tab-pane fade" id="tab3">
+					            <div class="ripple-parent"> <input type="submit" value="Search" class="search-btn"/> </div>
+					          </div>
+					          <div class="tab-pane fade" id="tab4">
+					            <div class="ripple-parent"> <input type="submit" value="Search" class="search-btn"/> </div>
+					          </div>
+					          <div class="tab-pane fade" id="tab5">
+					            <div class="ripple-parent"> <input type="submit" value="Search" class="search-btn"/> </div>
+					          </div>
+					          <div class="tab-pane fade" id="tab6">
+					            <div class="ripple-parent"> <input type="submit" value="Search" class="search-btn"/> </div>
+					          </div>
+					        </div>
+					      </div>
+					    </div>
+					  </div>
+					</div>
+				</section><!-- #hero -->
+    			<!-- Modal -->
+				<div class="modal fade" id="myModal" role="dialog">
+					<div class="modal-dialog">
+					  <!-- Modal content-->
+					  <div class="modal-content">
+					    <div class="modal-header">
+					      <button type="button" class="close" data-dismiss="modal"></button>
+					      <h4 class="modal-title">Thông báo</h4>
+					    </div>
+					    <div class="modal-body" id="taxi_result">
+					     
+					    </div>
+					    <div class="modal-footer">
+					      <button type="button" class="btn btn-default" data-dismiss="modal">OK</button>
+					    </div>
+					  </div>
+					  
+					</div>
+				</div>
+		<!--==========================
+		Footer
+		============================-->
+		<footer id="footer">
+			<div class="footer-top">
+			  <div class="container">
+
+			  </div>
+			</div>
+
+			<div class="container">
+			  <div class="copyright">
+			    Copyright <strong>Regna</strong>. All Rights Reserved
+			  </div>
+			</div>
+		</footer><!-- #footer -->
+		<a href="#" class="back-to-top"><i class="fa fa-chevron-up"></i></a>
+		<!-- Template Main Javascript File -->
+		<script src="js/main.js"></script>
+		<script>
+		    $(document).ready(function() {
+		      $('#datetimepicker2').datetimepicker({});
+		      $(".nav-tabs li a").on("click", function () {
+		        var relid = $(this).attr("rel");
+		        $(".nav-tabs li").removeClass("active");
+		        $(this).closest("li").addClass("active");
+		        $(".tab-content .tab-pane").removeClass("in active");
+		        $("#" + relid).addClass("in active");
+		      });
+		        
+		      $('.owl-carousel').owlCarousel({
+		        loop: true,
+		        items: 3,
+		        margin: 10,
+		        responsiveClass: true,
+		        responsive: {
+		          0: {
+		            items: 1,
+		            nav: true
+		          },
+		          600: {
+		            items: 3,
+		            nav: false
+		          },
+		          1000: {
+		            items: 3,
+		            nav: true,
+		            loop: false,
+		            margin: 20
+		          }
+		        }
+		      })
+		    });
+		</script>
+	</body>
+</html>
